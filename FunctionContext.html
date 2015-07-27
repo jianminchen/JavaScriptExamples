@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Julia is learning Java Script</title>
+    <style>
+#results li.pass { color: green; }
+#results li.fail { color: red; }
+</style>
+</head>
+<body>
+    <div id="results">
+        
+        </div>
+    <script>
+       
+        var katana = {
+            isSharp: true,
+            use: function () {
+                this.isSharp = !this.isSharp;
+            }
+        };
+        katana.use()
+        assert(!katana.isSharp,
+        "Verify the value of isSharp has been changed.");
+
+
+
+
+        function assert(value, desc) {
+            var li = document.createElement("li");
+
+            li.className = value ? "pass" : "fail";
+            li.appendChild(document.createTextNode(desc));
+            document.getElementById("results").appendChild(li);
+        }
+        </script>
+    
+</body>
+</html>

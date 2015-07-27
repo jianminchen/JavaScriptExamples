@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Julia is learning Java Script</title>
+    <style>
+#results li.pass { color: green; }
+#results li.fail { color: red; }
+</style>
+</head>
+<body>
+    <div id="results">
+        
+        </div>
+    <script>
+    var store = {
+        id: 1,
+        cache: {},
+        add: function( fn ) {
+            if ( !fn.id ) {
+                fn.id = store.id++;
+                return !!(store.cache[fn.id] = fn);
+            }
+    }
+};
+function ninja(){}
+assert( store.add( ninja ), "Function was safely added." );
+assert(!store.add(ninja), "But it was only added once.");
+
+function assert( value, desc ) {
+    var li = document.createElement("li");
+   
+    li.className = value ? "pass" : "fail";
+    li.appendChild( document.createTextNode( desc ) );
+    document.getElementById("results").appendChild( li );
+}
+        </script>
+    
+</body>
+</html>

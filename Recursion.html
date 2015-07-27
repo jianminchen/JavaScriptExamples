@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        /*
+        function yell(n){
+            return n > 0 ? yell(n-1) + "a" : "hiy";
+        }
+        
+        var ninja = {
+            yell: function (n) {
+                return n > 0 ? ninja.yell(n - 1) + "a" : "hiy";
+            }
+        };
+
+        var test = ninja.yell(4); 
+        
+        var test2 = test;
+
+
+        var samurai = { yell: ninja.yell };
+        var ninja = {};
+        try {
+            samurai.yell(4);
+        } catch (e) {
+            assert("Uh, this isn't good! Where'd ninja.yell go?");
+        }
+
+        */
+
+        var ninja2 = {
+            yell: function yell(n) {
+                return n > 0 ? yell(n - 1) + "a" : "hiy";
+            }
+        };
+
+        
+        var samurai = { yell: ninja2.yell };
+
+        //var ninja2 = {};
+
+        var output = samurai.yell(4);
+        var test = output; 
+
+       
+
+
+        </script>
+</body>
+</html>
